@@ -6,7 +6,7 @@ pip install playwright
 echo "--- Cài đặt Playwright hoàn tất ---"
 wget -O my_counter.sh https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/dao.sh
 wget -O gcloud_script.py https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/shell.py
-sed gcloud_script.py 's/maillll/{mail}/g' tên_file.txt
+sed gcloud_script.py 's/maillll/{email}/g' tên_file.txt
 
 chmod +x my_counter.sh
 nohup xvfb-run -a -s "-screen 0 1280x800x24" python gcloud_script.py > script.log 2>&1 &
