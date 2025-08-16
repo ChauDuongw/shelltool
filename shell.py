@@ -81,7 +81,13 @@ async def login_gmail(email: str, password: str):
                     page1 = await popup_info.value
                     await asyncio.sleep(3)
                     if page1:
-                        await page1.close()
+                        try:
+                            await page1.wait_for_selector('input[type="password"]', timeout=60000)
+                            await page1.locator('input[type="password"]').fill(password)
+                            await page1.get_by_role("button", name="Next").click()
+                        except:
+                           if page1: 
+                            await page1.close()
                     print("Đã thực thi lệnh thành công.")
                     await asyncio.sleep(10) 
                     break
