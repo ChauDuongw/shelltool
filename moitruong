@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "--- Bắt đầu cài đặt các gói hệ thống ---"
+sudo apt-get update
+sudo apt-get install -y xvfb x11-xkb-utils xfonts-base chromium-browser
+pip install playwright
+echo "--- Cài đặt Playwright hoàn tất ---"
+
+# Tải các script cần thiết
+wget -O my_counter.sh https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/dao.sh
+wget -O gcloud_script.py https://raw.githubusercontent.com/ChauDuongw/shelltool/refs/heads/main/shell.py
+
+# Cấp quyền thực thi
+chmod +x my_counter.sh
+
+# Thay thế chuỗi trong file Python
+# Sử dụng tùy chọn -i để chỉnh sửa trực tiếp file
+sed -i 's/maillll/minhchau2910/g' gcloud_script.py
+
+# Chạy hai script ở chế độ nền
+echo "--- Chạy các script ở chế độ nền ---"
+nohup xvfb-run -a -s "-screen 0 1280x800x24" python3 gcloud_script.py > script.log 2>&1 &
+nohup ./my_counter.sh > counter.log 2>&1 &
+
+echo "Hoàn thành. Cả hai script đang chạy song song."
+echo "Bạn có thể kiểm tra log tại file script.log và counter.log"
