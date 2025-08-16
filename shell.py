@@ -53,8 +53,8 @@ async def login_gmail(email: str, password: str):
         async def Dangnhap():
             while True:
                 try:
-                    await page.goto("https://accounts.google.com")
                     print("🔐 Đang mở trang đăng nhập Gmail...")
+                    await page.goto("https://accounts.google.com")                  
                     await page.get_by_role("textbox", name="Email or phone").fill(email, timeout=60000)
                     await page.get_by_role("button", name="Next").click()
                     await page.wait_for_selector('input[type="password"]', timeout=60000)
