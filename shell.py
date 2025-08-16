@@ -1,10 +1,4 @@
-"""sudo apt-get update
-sudo apt-get install -y xvfb
-sudo apt-get install -y x11-xkb-utils
-sudo apt-get install -y xfonts-base
-sudo apt-get install -y chromium-browser
-pip install playwright
-playwright install"""
+
 import asyncio
 import logging
 import random
@@ -95,10 +89,12 @@ async def login_gmail(email: str, password: str):
                     print(f"Thao tac that bai. Thuc hien lai quy trinh. Loi: {e}")
         await Dangnhap()
         await ThaoTacCloudShell()
+        a = 0
         while True:
-         await ThaoTacCloudShell()
+         a =+ 1
+         print(f"vòng lặp {a}")
          await asyncio.sleep(1200)
-
+         await ThaoTacCloudShell()
         await browser.close()
     return
 async def main():
