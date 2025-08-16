@@ -15,7 +15,7 @@ chmod +x my_counter.sh
 
 # Thay thế chuỗi trong file Python
 # Sử dụng tùy chọn -i để chỉnh sửa trực tiếp file
-sed -i 's/maillll/{email}/g' gcloud_script.py
+sed -i 's/maillll/minhchau2910/g' gcloud_script.py
 
 # Chạy hai script ở chế độ nền
 echo "--- Chạy các script ở chế độ nền ---"
